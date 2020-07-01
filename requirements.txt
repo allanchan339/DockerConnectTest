@@ -1,0 +1,7 @@
+pymysql
+futu-api
+investpy
+tiingo
+yahoo-historical
+get-all-tickers
+sshtunnel

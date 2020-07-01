@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  conda:
+    build: .
+    ports:
+      - '8888:8888'
+      - '11111:11111'
+    expose:
+      - '11111'
+      - '3306'
+    volumes:
+      - 'prometheus-data:/Users/allanchan/PycharmProjects/backtest'
+#         force to follow the same path as Mac
+# Using the SAME path design when using linux remote python
+#     links:
+#       - 'mysql'
+volumes:
+  prometheus-data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /Users/allanchan/PycharmProjects/backtest
+
+networks:
+  default:
+    external:
+      name: futu
+#setting up a volumes to store data from mysql, when shutting down, sql will still be there
+#local randomly, ask docker for more info
