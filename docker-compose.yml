@@ -9,12 +9,11 @@ services:
       - '11111'
       - '3306'
     volumes:
-      - 'prometheus-data:/Users/allanchan/PycharmProjects/backtest'
-#         force to follow the same path as Mac
-# Using the SAME path design when using linux remote python
+      - '/opt/project:/Users/allanchan/PycharmProjects/backtest'
+#/opt/project map to host /backtest
 #     links:
 #       - 'mysql'
-volumes:
+volumes: #is going to map
   prometheus-data:
     driver: local
     driver_opts:

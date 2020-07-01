@@ -1,3 +1,3 @@
 import os
-os.system('find / -name docker-compose.yml')
+os.system('find / -name test.py')
 os.system('uname -a')
